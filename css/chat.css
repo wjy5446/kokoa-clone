@@ -14,7 +14,7 @@
 
 .chat-screen {
   background-image: url("../images/chatBg.png");
-  min-height: 100vh;
+  min-height: 1000vh;
   padding-top: 50px;
 }
 
@@ -28,8 +28,9 @@
   background-color: #fcfcfc;
   padding: 10px 20px;
   border-radius: 40px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.2),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.03) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
