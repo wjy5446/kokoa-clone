@@ -31,6 +31,26 @@
   align-items: center;
 }
 
+@keyframes float {
+  0% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.024);
+  }
+
+  50% {
+    box-shadow: 0 30px 60px -30px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.024);
+  }
+
+  100% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.024);
+  }
+}
+
 .chat__write {
   bottom: 0px;
   margin: 0 auto;
@@ -46,21 +66,18 @@
 .chat__write:focus {
   outline: none;
   width: 80%;
-
-  transform: translateY(-50px);
   border-radius: 40px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.03) 0px 8px 16px -8px,
-    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
-}
-
-.chat__write:focus ~ .chat__icon {
-  opacity: 0;
+  transform: translateY(-50px);
+  animation: float 2s linear infinite forwards;
 }
 
 .chat__icon {
   font-size: 18px;
   transition: opacity 0.3s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
 }
 
 .chat__icon-left {
@@ -167,4 +184,34 @@
   border-bottom-right-radius: 0px;
   background-image: linear-gradient(to right, #136a8a, #267871);
   color: white;
+}
+
+@keyframes incomingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAnim 0.5s ease-out forwards;
+}
+
+@keyframes sendAnim {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.send-message {
+  animation: sendAnim 0.5s ease-out forwards;
 }
